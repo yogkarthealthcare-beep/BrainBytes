@@ -1,0 +1,88 @@
+.footer-wrap {
+  background: #060614;
+  position: relative;
+  overflow: hidden;
+}
+.footer-topline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,245,255,0.3) 30%, rgba(124,58,237,0.3) 70%, transparent 100%);
+}
+
+/* Logo */
+.logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { display: flex; align-items: center; }
+.logo-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; color: #fff; letter-spacing: -0.02em; }
+
+/* Newsletter */
+.newsletter-wrap {
+  display: flex;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 320px;
+}
+.newsletter-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 14px;
+  color: #E2E8F0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+}
+.newsletter-input::placeholder { color: rgba(136,146,164,0.4); }
+.newsletter-btn {
+  background: linear-gradient(135deg, #00F5FF, #7C3AED);
+  border: none;
+  padding: 10px 16px;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+.newsletter-btn:hover { opacity: 0.85; }
+
+/* Footer Headings */
+.footer-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-link-sm {
+  font-size: 0.8rem;
+  color: #8892A4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-link-sm:hover { color: #00F5FF; }
+.footer-social {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: #8892A4;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.footer-social:hover { border-color: rgba(0,245,255,0.4); color: #00F5FF; background: rgba(0,245,255,0.06); }

@@ -1,0 +1,336 @@
+<!-- ═══════════════════════════════════════════════
+     SECTION 1: HERO
+═══════════════════════════════════════════════ -->
+<section class="hero-section relative overflow-hidden grid-bg noise-overlay" style="min-height:100vh;">
+
+  <!-- Particle Canvas -->
+  <canvas #particleCanvas id="particle-canvas"></canvas>
+
+  <!-- Background Blobs -->
+  <div class="blob" style="position:absolute;width:600px;height:600px;top:-150px;left:-100px;background:radial-gradient(circle,rgba(124,58,237,0.25),transparent 70%);animation-duration:10s;"></div>
+  <div class="blob" style="position:absolute;width:500px;height:500px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(0,245,255,0.15),transparent 70%);animation-duration:13s;animation-delay:2s;"></div>
+  <div class="blob" style="position:absolute;width:300px;height:300px;top:50%;left:60%;background:radial-gradient(circle,rgba(244,114,182,0.1),transparent 70%);animation-duration:8s;animation-delay:4s;"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-32 pb-20" style="min-height:100vh;">
+
+    <!-- Tag line -->
+    <div class="hero-tag" [class.visible]="heroVisible">
+      <span class="section-tag justify-center">
+        <svg class="w-3 h-3 fill-current text-bb-cyan mr-1" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+        NOW AVAILABLE — NEXT-GEN SOLUTIONS
+      </span>
+    </div>
+
+    <!-- Main Headline -->
+    <h1 class="hero-headline" [class.visible]="heroVisible">
+      <span class="block">Brain Bytes —</span>
+      <span class="block text-gradient">Building Smart</span>
+      <span class="block">Digital Experiences</span>
+    </h1>
+
+    <!-- Sub-heading -->
+    <p class="hero-sub" [class.visible]="heroVisible">
+      We craft intelligent software solutions that push boundaries,<br class="hidden md:block">
+      accelerate businesses, and shape the future of technology.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="hero-btns" [class.visible]="heroVisible">
+      <a routerLink="/products" class="btn-primary pulse-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+        View Products
+      </a>
+      <a routerLink="/contact" class="btn-outline">
+        Contact Us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Floating Stats Row -->
+    <div class="hero-stats-row" [class.visible]="heroVisible">
+      <div *ngFor="let s of [['150+','Projects'],['98%','Satisfaction'],['12+','Years']]" class="hero-stat-pill">
+        <span class="text-bb-cyan font-display font-bold text-lg">{{ s[0] }}</span>
+        <span class="text-bb-gray text-sm font-body">{{ s[1] }}</span>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" [class.visible]="heroVisible">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="text-bb-gray text-xs font-mono tracking-widest mt-2">SCROLL</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 2: COMPANY INTRO
+═══════════════════════════════════════════════ -->
+<section class="py-32 px-6 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- Text Side -->
+    <div data-reveal="left">
+      <p class="section-tag mb-4">// WHO WE ARE</p>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-white leading-tight mb-6">
+        We're not just a software company.<br>
+        <span class="text-gradient">We're architects</span><br>
+        of digital futures.
+      </h2>
+      <p class="text-bb-gray text-lg leading-relaxed mb-6">
+        Founded in 2012, Brain Bytes has been at the forefront of digital transformation.
+        We combine human creativity with machine intelligence to build products that don't
+        just solve problems — they redefine what's possible.
+      </p>
+      <p class="text-bb-gray leading-relaxed mb-8">
+        Our multidisciplinary team of engineers, designers, and strategists works as an
+        extension of your team — obsessing over every detail, every line of code, every
+        pixel until the experience is genuinely exceptional.
+      </p>
+      <a routerLink="/about" class="btn-outline inline-flex">
+        Our Story
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Image / Visual Side -->
+    <div class="relative" data-reveal="right" data-delay="200">
+      <div class="about-visual-card animate-float">
+        <!-- Outer glow ring -->
+        <div class="glow-ring"></div>
+        <!-- Inner content -->
+        <div class="visual-inner">
+          <div class="visual-brain">🧠</div>
+          <div class="visual-lines">
+            <div class="vl" *ngFor="let w of [80,60,90,70,50]" [style.width]="w+'%'"></div>
+          </div>
+          <!-- Floating badges -->
+          <div class="float-badge top-left animate-float" style="animation-delay:1s">
+            <span class="badge-dot"></span> AI-Powered
+          </div>
+          <div class="float-badge bottom-right animate-float" style="animation-delay:2.5s">
+            <span class="badge-dot" style="background:#7C3AED"></span> Cloud-Native
+          </div>
+          <div class="float-badge top-right animate-float-slow">
+            <span style="color:#34D399">✓</span> Secure
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 3: SERVICES
+═══════════════════════════════════════════════ -->
+<section class="py-24 px-6 relative overflow-hidden" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.04),transparent);">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-16" data-reveal>
+      <p class="section-tag justify-center mb-4">// WHAT WE DO</p>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+        Services That <span class="text-gradient">Scale</span>
+      </h2>
+      <p class="text-bb-gray text-lg max-w-2xl mx-auto">
+        From concept to deployment, we deliver end-to-end technology solutions
+        engineered for performance, security, and long-term growth.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let svc of services; let i = index"
+           class="service-card"
+           data-reveal
+           [attr.data-delay]="i * 100">
+        <div class="service-icon" [style.background]="svc.bg">
+          <span style="font-size:1.6rem;">{{ svc.icon }}</span>
+          <div class="icon-glow" [style.background]="svc.color"></div>
+        </div>
+        <h3 class="text-white font-display font-bold text-lg mb-3">{{ svc.title }}</h3>
+        <p class="text-bb-gray text-sm leading-relaxed">{{ svc.desc }}</p>
+        <div class="svc-arrow" [style.color]="svc.color">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 4: WHY CHOOSE US / STATS
+═══════════════════════════════════════════════ -->
+<section class="py-28 px-6 relative overflow-hidden">
+  <div class="blob" style="position:absolute;width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(124,58,237,0.08),transparent 70%);pointer-events:none;"></div>
+
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16" data-reveal>
+      <p class="section-tag justify-center mb-4">// BY THE NUMBERS</p>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+        Why <span class="text-gradient">Brain Bytes</span>?
+      </h2>
+      <p class="text-bb-gray text-lg max-w-xl mx-auto">
+        Numbers tell a story. Ours speaks of relentless commitment
+        to craft, quality, and client success.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      <div *ngFor="let stat of stats; let i = index"
+           class="stat-card"
+           data-reveal
+           [attr.data-delay]="i * 100"
+           [attr.data-stat-idx]="i">
+        <div class="stat-icon">{{ stat.icon }}</div>
+        <div class="stat-value counter-num">
+          {{ stat.display }}<span class="text-gradient-cyan">{{ stat.suffix }}</span>
+        </div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+    </div>
+
+    <!-- Why Choose Cards -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="why-card" data-reveal data-delay="0">
+        <div class="why-icon">⚡</div>
+        <h3 class="text-white font-display font-bold text-xl mb-2">Lightning Fast Delivery</h3>
+        <p class="text-bb-gray text-sm leading-relaxed">Our agile sprints and automated CI/CD pipelines ensure faster time-to-market without compromising on quality.</p>
+      </div>
+      <div class="why-card" data-reveal data-delay="200">
+        <div class="why-icon">🔒</div>
+        <h3 class="text-white font-display font-bold text-xl mb-2">Security First Approach</h3>
+        <p class="text-bb-gray text-sm leading-relaxed">Every product is built with security baked in — not bolted on. We follow OWASP, SOC2, and ISO 27001 standards.</p>
+      </div>
+      <div class="why-card" data-reveal data-delay="400">
+        <div class="why-icon">♾️</div>
+        <h3 class="text-white font-display font-bold text-xl mb-2">Infinite Scalability</h3>
+        <p class="text-bb-gray text-sm leading-relaxed">Architecture that grows with your business — from startup MVP to enterprise-grade systems handling millions of requests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 5: FEATURED PRODUCTS
+═══════════════════════════════════════════════ -->
+<section class="py-28 px-6" style="background:linear-gradient(180deg,transparent,rgba(0,245,255,0.02),transparent);">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6" data-reveal>
+      <div>
+        <p class="section-tag mb-4">// OUR PRODUCTS</p>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-white">
+          Built for the <span class="text-gradient">Future</span>
+        </h2>
+      </div>
+      <a routerLink="/products" class="btn-outline shrink-0">
+        All Products
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div *ngFor="let p of products; let i = index"
+           class="product-card"
+           data-reveal
+           [attr.data-delay]="i * 100">
+        <!-- Card header with gradient -->
+        <div class="prod-card-header" [style.background]="'linear-gradient(135deg,' + p.color + '22, ' + p.color + '08)'">
+          <div class="prod-icon" [style.background]="p.color + '22'" [style.color]="p.color">
+            <span style="font-size:2rem">{{ p.icon }}</span>
+          </div>
+          <span class="prod-tag" [style.color]="p.color" [style.background]="p.color + '18'">{{ p.tag }}</span>
+        </div>
+        <!-- Card body -->
+        <div class="p-5">
+          <p class="text-bb-gray text-xs font-mono mb-1">{{ p.category }}</p>
+          <h3 class="text-white font-display font-bold text-xl mb-2">{{ p.name }}</h3>
+          <p class="text-bb-gray text-sm leading-relaxed mb-4">{{ p.desc }}</p>
+          <div class="prod-cta" [style.color]="p.color">
+            Learn more
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 6: CLIENT LOGO MARQUEE
+═══════════════════════════════════════════════ -->
+<section class="py-20 px-6 overflow-hidden" style="border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);">
+  <div class="max-w-7xl mx-auto mb-10 text-center" data-reveal>
+    <p class="section-tag justify-center mb-3">// TRUSTED BY</p>
+    <p class="text-bb-gray text-sm tracking-widest font-mono uppercase">Companies That Chose Brain Bytes</p>
+  </div>
+
+  <!-- Fade masks -->
+  <div class="marquee-wrapper relative" style="mask-image:linear-gradient(to right,transparent,black 15%,black 85%,transparent);">
+    <div class="marquee-track">
+      <div *ngFor="let c of clients.concat(clients)" class="client-logo-pill">
+        <span class="client-dot"></span>
+        {{ c }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SECTION 7: CTA SECTION
+═══════════════════════════════════════════════ -->
+<section class="py-32 px-6 relative overflow-hidden">
+  <!-- Background -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(124,58,237,0.18),transparent 70%);pointer-events:none;"></div>
+  <div class="blob" style="position:absolute;width:400px;height:400px;top:-100px;right:-100px;background:radial-gradient(circle,rgba(0,245,255,0.1),transparent 70%);animation-duration:12s;"></div>
+  <div class="blob" style="position:absolute;width:400px;height:400px;bottom:-100px;left:-100px;background:radial-gradient(circle,rgba(244,114,182,0.08),transparent 70%);animation-duration:9s;animation-delay:3s;"></div>
+
+  <!-- Grid overlay -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto text-center" data-reveal>
+    <p class="section-tag justify-center mb-6">// LET'S WORK TOGETHER</p>
+    <h2 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-none mb-6">
+      Ready to Build<br>
+      <span class="text-gradient">Something</span><br>
+      Extraordinary?
+    </h2>
+    <p class="text-bb-gray text-xl max-w-2xl mx-auto mb-10">
+      Tell us your vision. We'll architect the future together.
+      No pitch decks, no fluff — just a conversation.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a routerLink="/contact" class="btn-primary pulse-btn text-base px-10 py-4">
+        Start a Project
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      <a routerLink="/about" class="btn-outline text-base px-10 py-4">
+        Learn About Us
+      </a>
+    </div>
+
+    <!-- Bottom trust bar -->
+    <div class="cta-trust-bar" data-reveal data-delay="300">
+      <div class="trust-item"><span>✓</span> No long-term lock-ins</div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><span>✓</span> Transparent pricing</div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><span>✓</span> 48hr response guarantee</div>
+    </div>
+  </div>
+</section>

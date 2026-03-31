@@ -1,0 +1,97 @@
+<!-- Hero -->
+<section class="page-hero relative overflow-hidden grid-bg">
+  <div class="blob" style="position:absolute;width:500px;height:500px;top:-100px;right:-100px;background:radial-gradient(circle,rgba(244,114,182,0.12),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto px-6 pt-40 pb-24 relative z-10">
+    <p class="section-tag mb-4">// PORTFOLIO</p>
+    <h1 class="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+      Work That <span class="text-gradient">Speaks</span><br>for Itself
+    </h1>
+    <p class="text-bb-gray text-xl max-w-2xl leading-relaxed">
+      150+ projects delivered across fintech, healthcare, AI, and e-commerce.
+      Here's a selection of work we're proud to call our own.
+    </p>
+  </div>
+</section>
+
+<!-- Filter Bar -->
+<section class="py-10 px-6 sticky top-[72px] z-40" style="background:rgba(8,8,26,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.05);">
+  <div class="max-w-7xl mx-auto flex gap-3 flex-wrap justify-center">
+    <button *ngFor="let f of filters"
+            class="filter-btn"
+            [class.active]="activeFilter === f"
+            (click)="setFilter(f)">
+      {{ f }}
+    </button>
+  </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-16 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let p of filteredProjects; let i = index"
+           class="gallery-item"
+           [attr.data-reveal]="true"
+           [attr.data-delay]="(i % 3) * 100">
+
+        <!-- Project visual header -->
+        <div class="gallery-visual" [style.background]="'linear-gradient(135deg,' + p.color + '18, ' + p.color + '06)'">
+          <div class="gallery-icon" [style.background]="p.color + '22'" [style.color]="p.color">
+            <span style="font-size:2rem">{{ p.icon }}</span>
+          </div>
+          <div class="gallery-tags">
+            <span *ngFor="let t of p.tags" class="gallery-tag">{{ t }}</span>
+          </div>
+          <!-- Overlay on hover -->
+          <div class="overlay">
+            <div>
+              <p class="text-bb-gray text-xs font-mono mb-1">{{ p.category }} · {{ p.year }}</p>
+              <p class="text-white text-sm leading-relaxed">{{ p.desc }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card body -->
+        <div class="p-5">
+          <p class="text-bb-gray text-xs font-mono mb-1">{{ p.client }}</p>
+          <h3 class="text-white font-display font-bold text-lg">{{ p.title }}</h3>
+          <div class="flex items-center justify-between mt-3">
+            <span class="gallery-cat-pill" [style.color]="p.color" [style.borderColor]="p.color + '40'">{{ p.category }}</span>
+            <span class="text-bb-gray text-xs font-mono">{{ p.year }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state -->
+    <div *ngIf="filteredProjects.length === 0" class="text-center py-24">
+      <p class="text-bb-gray text-lg">No projects in this category yet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Client Showcase -->
+<section class="py-24 px-6" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.03),transparent);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14" data-reveal>
+      <p class="section-tag justify-center mb-4">// TRUSTED CLIENTS</p>
+      <h2 class="text-4xl font-display font-bold text-white">Built for <span class="text-gradient">Leaders</span></h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div *ngFor="let c of clients; let i = index"
+           class="client-card"
+           data-reveal
+           [attr.data-delay]="(i % 3) * 100">
+        <div class="client-card-icon">{{ c.icon }}</div>
+        <div>
+          <h3 class="text-white font-display font-bold text-lg">{{ c.name }}</h3>
+          <p class="text-bb-gray text-sm">{{ c.industry }}</p>
+        </div>
+        <div class="client-projects">
+          <span class="text-gradient-cyan font-display font-bold text-lg">{{ c.projects }}</span>
+          <span class="text-bb-gray text-xs">projects</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

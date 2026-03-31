@@ -1,0 +1,72 @@
+<footer class="footer-wrap">
+  <!-- Top gradient line -->
+  <div class="footer-topline"></div>
+
+  <!-- Main footer content -->
+  <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-14">
+
+      <!-- Brand Column -->
+      <div class="col-span-2 md:col-span-4 lg:col-span-2">
+        <a routerLink="/" class="logo-wrap mb-5 inline-flex">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="url(#flg1)"/>
+              <path d="M8 10h8a6 6 0 0 1 0 12H8V10z" fill="white" fill-opacity="0.9"/>
+              <circle cx="22" cy="10" r="3" fill="#00F5FF"/>
+              <defs>
+                <linearGradient id="flg1" x1="0" y1="0" x2="32" y2="32">
+                  <stop stop-color="#7C3AED"/>
+                  <stop offset="1" stop-color="#00F5FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">Brain<span class="text-gradient-cyan">Bytes</span></span>
+        </a>
+        <p class="text-bb-gray text-sm leading-relaxed mb-6 max-w-xs">
+          Building smart digital experiences. From AI platforms to cloud infrastructure —
+          we engineer software that matters.
+        </p>
+        <!-- Newsletter mini -->
+        <div class="newsletter-wrap">
+          <input type="email" placeholder="Your email…" class="newsletter-input">
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+
+      <!-- Company Links -->
+      <div>
+        <h4 class="footer-heading">Company</h4>
+        <a *ngFor="let l of links.company" [routerLink]="l.path" class="footer-link">{{ l.label }}</a>
+      </div>
+
+      <!-- Products Links -->
+      <div>
+        <h4 class="footer-heading">Products</h4>
+        <a *ngFor="let l of links.products" [routerLink]="l.path" class="footer-link">{{ l.label }}</a>
+      </div>
+
+      <!-- Services Links -->
+      <div>
+        <h4 class="footer-heading">Services</h4>
+        <a *ngFor="let l of links.services" [routerLink]="l.path" class="footer-link">{{ l.label }}</a>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="text-bb-gray text-sm">
+        © {{ year }} Brain Bytes Technologies. All rights reserved.
+      </p>
+      <div class="flex items-center gap-5">
+        <a href="#" class="footer-link-sm">Privacy</a>
+        <a href="#" class="footer-link-sm">Terms</a>
+        <a href="#" class="footer-link-sm">Cookies</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a *ngFor="let s of socials" [href]="s.href" class="footer-social" [title]="s.name">{{ s.icon }}</a>
+      </div>
+    </div>
+  </div>
+</footer>

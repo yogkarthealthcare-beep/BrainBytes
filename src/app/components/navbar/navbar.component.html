@@ -1,0 +1,67 @@
+<nav class="navbar-wrap" [class.scrolled]="isScrolled">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo-wrap" (click)="closeMobile()">
+      <div class="logo-icon">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#lg1)"/>
+          <path d="M8 10h8a6 6 0 0 1 0 12H8V10z" fill="white" fill-opacity="0.9"/>
+          <circle cx="22" cy="10" r="3" fill="#00F5FF"/>
+          <defs>
+            <linearGradient id="lg1" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#00F5FF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <span class="logo-text">Brain<span class="text-gradient-cyan">Bytes</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a *ngFor="let link of navLinks"
+         [routerLink]="link.path"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: link.path === '/'}"
+         class="nav-link"
+         (click)="closeMobile()">
+        {{ link.label }}
+      </a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <div class="hidden md:flex items-center gap-3">
+      <a routerLink="/contact" class="btn-primary text-sm py-2.5 px-5">
+        Get Started
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="md:hidden hamburger" [class.open]="isMobileOpen" (click)="toggleMobile()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMobileOpen">
+    <div class="mobile-menu-inner">
+      <a *ngFor="let link of navLinks; let i = index"
+         [routerLink]="link.path"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{exact: link.path === '/'}"
+         class="mobile-nav-link"
+         [style.animation-delay]="(i * 50) + 'ms'"
+         (click)="closeMobile()">
+        {{ link.label }}
+      </a>
+      <a routerLink="/contact" class="btn-primary mt-4 justify-center" (click)="closeMobile()">
+        Get Started
+      </a>
+    </div>
+  </div>
+</nav>

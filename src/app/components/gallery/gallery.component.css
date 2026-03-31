@@ -1,0 +1,78 @@
+.page-hero { background: #08081A; min-height: 50vh; display: flex; align-items: center; }
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: #8892A4;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color: rgba(0,245,255,0.5);
+  color: #00F5FF;
+  background: rgba(0,245,255,0.06);
+}
+
+/* Gallery Visual */
+.gallery-visual {
+  height: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-icon {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.gallery-tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.gallery-tag {
+  font-size: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.06);
+  color: #8892A4;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gallery-cat-pill {
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+/* Client Cards */
+.client-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, rgba(17,17,48,0.8), rgba(13,13,43,0.5));
+  border: 1px solid rgba(124,58,237,0.15);
+  border-radius: 14px;
+  padding: 20px 24px;
+  transition: all 0.3s;
+}
+.client-card:hover { border-color: rgba(0,245,255,0.3); transform: translateX(4px); }
+.client-card-icon { font-size: 2rem; }
+.client-projects {
+  margin-left: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

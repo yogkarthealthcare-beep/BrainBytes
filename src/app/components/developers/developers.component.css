@@ -1,0 +1,66 @@
+.page-hero { background: #08081A; min-height: 50vh; display: flex; align-items: center; }
+
+/* Filter Buttons */
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: #8892A4;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color: rgba(0,245,255,0.5);
+  color: #00F5FF;
+  background: rgba(0,245,255,0.06);
+}
+
+/* Developer Card extras */
+.dev-top-bar {
+  height: 4px;
+  width: 100%;
+  transition: height 0.3s;
+}
+.dev-card:hover .dev-top-bar { height: 6px; }
+
+.stack-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.2);
+  color: #A78BFA;
+  font-size: 0.65rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.social-btn {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: #8892A4;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+.social-btn:hover { border-color: rgba(0,245,255,0.4); color: #00F5FF; background: rgba(0,245,255,0.06); }
+
+/* Join Badge */
+.join-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 18px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(124,58,237,0.1));
+  border: 1px solid rgba(0,245,255,0.3);
+  color: #00F5FF;
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

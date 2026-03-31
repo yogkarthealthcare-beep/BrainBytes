@@ -1,0 +1,97 @@
+<!-- Page Hero -->
+<section class="page-hero relative overflow-hidden grid-bg">
+  <div class="blob" style="position:absolute;width:500px;height:500px;top:-100px;left:-100px;background:radial-gradient(circle,rgba(124,58,237,0.2),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto px-6 pt-40 pb-24 relative z-10">
+    <p class="section-tag mb-4">// ABOUT US</p>
+    <h1 class="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+      We Build the <span class="text-gradient">Future</span><br>One Byte at a Time
+    </h1>
+    <p class="text-bb-gray text-xl max-w-2xl leading-relaxed">
+      A team of passionate technologists, designers, and strategists united by a single mission:
+      create software that changes how the world works.
+    </p>
+  </div>
+</section>
+
+<!-- Mission / Vision -->
+<section class="py-24 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+    <div class="mission-card" data-reveal>
+      <div class="mc-icon">🎯</div>
+      <h2 class="text-2xl font-display font-bold text-white mb-3">Our Mission</h2>
+      <p class="text-bb-gray leading-relaxed">
+        To democratize enterprise-grade technology — making intelligent, scalable, and beautiful
+        software accessible to businesses of every size, everywhere in the world.
+      </p>
+    </div>
+    <div class="mission-card" data-reveal data-delay="200">
+      <div class="mc-icon" style="background:linear-gradient(135deg,rgba(244,114,182,0.15),rgba(124,58,237,0.1));">🔭</div>
+      <h2 class="text-2xl font-display font-bold text-white mb-3">Our Vision</h2>
+      <p class="text-bb-gray leading-relaxed">
+        A world where technology amplifies human potential — where every business, regardless of
+        size, has access to the same calibre of digital tools as the world's largest corporations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-24 px-6" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.04),transparent);">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16" data-reveal>
+      <p class="section-tag justify-center mb-4">// OUR JOURNEY</p>
+      <h2 class="text-4xl font-display font-bold text-white">The Brain Bytes Story</h2>
+    </div>
+
+    <div class="timeline-wrap">
+      <div *ngFor="let item of timeline; let i = index; let odd = odd"
+           class="timeline-item"
+           [class.odd]="odd"
+           data-reveal
+           [attr.data-delay]="i * 100">
+        <div class="timeline-content">
+          <span class="timeline-year">{{ item.year }}</span>
+          <h3 class="text-white font-display font-bold text-xl mb-2">{{ item.title }}</h3>
+          <p class="text-bb-gray text-sm leading-relaxed">{{ item.desc }}</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-spacer"></div>
+      </div>
+      <div class="timeline-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16" data-reveal>
+      <p class="section-tag justify-center mb-4">// WHAT WE STAND FOR</p>
+      <h2 class="text-4xl font-display font-bold text-white">Our Core <span class="text-gradient">Values</span></h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div *ngFor="let v of values; let i = index"
+           class="value-card"
+           data-reveal
+           [attr.data-delay]="i * 100">
+        <div class="value-icon">{{ v.icon }}</div>
+        <h3 class="text-white font-display font-bold text-lg mb-2">{{ v.title }}</h3>
+        <p class="text-bb-gray text-sm leading-relaxed">{{ v.desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-6 text-center" style="background:linear-gradient(180deg,transparent,rgba(0,245,255,0.03),transparent);">
+  <div data-reveal>
+    <h2 class="text-4xl font-display font-bold text-white mb-4">Want to Join the Team?</h2>
+    <p class="text-bb-gray text-lg mb-8 max-w-xl mx-auto">We're always looking for brilliant minds who care about craft, quality, and making a real impact.</p>
+    <a routerLink="/contact" class="btn-primary pulse-btn inline-flex">
+      Get in Touch
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</section>

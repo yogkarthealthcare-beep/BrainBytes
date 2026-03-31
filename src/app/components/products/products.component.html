@@ -1,0 +1,132 @@
+<!-- Hero -->
+<section class="page-hero relative overflow-hidden grid-bg">
+  <div class="blob" style="position:absolute;width:500px;height:500px;top:-100px;left:-100px;background:radial-gradient(circle,rgba(0,245,255,0.12),transparent 70%);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto px-6 pt-40 pb-24 relative z-10">
+    <p class="section-tag mb-4">// OUR PRODUCTS</p>
+    <h1 class="text-5xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
+      Tools Built for<br><span class="text-gradient">Tomorrow's</span> Builders
+    </h1>
+    <p class="text-bb-gray text-xl max-w-2xl leading-relaxed">
+      A suite of production-grade SaaS products engineered for performance, security, and scale.
+      From AI to cloud storage to workflow automation — we've built the tools you need.
+    </p>
+  </div>
+</section>
+
+<!-- Featured Product: NeuralHub -->
+<section class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="featured-product-card" data-reveal>
+      <div class="featured-badge">⭐ {{ featured.tag }}</div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Info -->
+        <div>
+          <div class="feat-icon">{{ featured.icon }}</div>
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-3">{{ featured.name }}</h2>
+          <p class="text-gradient-cyan font-display font-semibold text-lg mb-5">{{ featured.tagline }}</p>
+          <p class="text-bb-gray leading-relaxed mb-8">{{ featured.desc }}</p>
+          <ul class="feat-features mb-8">
+            <li *ngFor="let f of featured.features" class="feat-feature-item">
+              <svg class="w-4 h-4 text-bb-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              {{ f }}
+            </li>
+          </ul>
+          <a routerLink="/contact" class="btn-primary pulse-btn inline-flex">
+            Request Demo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+        <!-- Right: Visual Stats -->
+        <div class="feat-stats-panel">
+          <div class="feat-display animate-float">
+            <div class="feat-display-inner">
+              <span class="feat-display-icon">{{ featured.icon }}</span>
+              <div class="feat-display-bars">
+                <div class="feat-bar" style="width:90%;--c:#00F5FF;animation-delay:0s;"></div>
+                <div class="feat-bar" style="width:75%;--c:#7C3AED;animation-delay:0.2s;"></div>
+                <div class="feat-bar" style="width:85%;--c:#F472B6;animation-delay:0.4s;"></div>
+                <div class="feat-bar" style="width:60%;--c:#34D399;animation-delay:0.6s;"></div>
+              </div>
+              <div class="feat-display-label">Live Model Performance</div>
+            </div>
+          </div>
+          <div class="feat-stats-grid">
+            <div *ngFor="let s of featured.stats" class="feat-stat">
+              <span class="feat-stat-val text-gradient-cyan">{{ s.value }}</span>
+              <span class="feat-stat-label">{{ s.label }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- All Products -->
+<section class="py-16 px-6" style="background:linear-gradient(180deg,transparent,rgba(124,58,237,0.03),transparent);">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14" data-reveal>
+      <p class="section-tag justify-center mb-4">// THE FULL SUITE</p>
+      <h2 class="text-4xl font-display font-bold text-white">Every Tool You <span class="text-gradient">Need</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let p of products; let i = index"
+           class="product-card"
+           data-reveal
+           [attr.data-delay]="(i % 3) * 100">
+        <div class="prod-card-header" [style.background]="'linear-gradient(135deg,' + p.color + '18,' + p.color + '06)'">
+          <div class="prod-hdr-left">
+            <div class="prod-big-icon" [style.background]="p.color + '18'">{{ p.icon }}</div>
+          </div>
+          <div>
+            <span class="prod-tag" [style.color]="p.color" [style.background]="p.color + '15'">{{ p.tag }}</span>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-bb-gray text-xs font-mono mb-1">{{ p.category }}</p>
+          <h3 class="text-white font-display font-bold text-2xl mb-3">{{ p.name }}</h3>
+          <p class="text-bb-gray text-sm leading-relaxed mb-5">{{ p.desc }}</p>
+          <ul class="space-y-2 mb-6">
+            <li *ngFor="let f of p.features" class="flex items-start gap-2 text-sm text-bb-gray">
+              <svg class="w-3.5 h-3.5 mt-0.5 shrink-0" [style.color]="p.color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              {{ f }}
+            </li>
+          </ul>
+          <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(255,255,255,0.06)">
+            <span class="text-white font-display font-semibold text-sm">{{ p.price }}</span>
+            <a routerLink="/contact" [style.color]="p.color" class="prod-cta">
+              Learn More
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Enterprise Banner -->
+<section class="py-24 px-6">
+  <div class="max-w-5xl mx-auto enterprise-banner" data-reveal>
+    <div class="eb-content">
+      <span class="text-4xl mb-4 block">🏢</span>
+      <h2 class="text-3xl font-display font-bold text-white mb-3">Need a Custom Enterprise Solution?</h2>
+      <p class="text-bb-gray mb-6 max-w-xl">Our enterprise team works with you to architect bespoke solutions at any scale. White-labelling, on-premise deployment, and dedicated SLAs available.</p>
+      <a routerLink="/contact" class="btn-primary inline-flex">
+        Talk to Enterprise Sales
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
